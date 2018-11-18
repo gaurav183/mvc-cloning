@@ -32,7 +32,7 @@ function [lambdas] = MVC(x,y,dP)
       %currently in radians
       alpha = acos(cos_alpha);
       prevAlpha = acos(cos_prevAlpha);
-      wi = (tan(prevAlpha/2) + tan(alpha/2)) / diff;
+      wi = (tan(prevAlpha/2) + tan(alpha/2)) / dist_xp;
       lambdas(i) = wi;
     end
     
