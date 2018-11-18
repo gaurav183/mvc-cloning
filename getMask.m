@@ -1,4 +1,4 @@
-function [mask, poly] = getMask(im)
+function [mask, sx, sy] = getMask(im)
 % [mask, poly] = getMask(im)
 % Asks user to draw polygon around input image.  Provides binary mask of
 % polygon and a chain of all interior boundary points.
@@ -19,6 +19,6 @@ while 1
 end
 
 mask = poly2mask(sx, sy, size(im, 1), size(im, 2));
-if nargout>1
-    [poly.x, poly.y] = mask2chain(mask);
-end
+% if nargout>1
+%     [poly.x, poly.y] = mask2chain(mask);
+% end

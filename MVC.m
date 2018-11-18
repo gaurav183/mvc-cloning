@@ -11,18 +11,18 @@ function [lambdas] = MVC(x,y,dP)
       if (i == m)
       	dist_xp1 = ((dP(1,1) - x)^2 + (dP(1,2) - y)^2)^0.5;
         dist_x1p = ((dP(i-1,1) - x)^2 + (dP(i-1,2) - y)^2)^0.5;
-        dist_pp1 = ((dP(i,1) - dP(1,1))^2 + (dP(i,2) - dp(1,2))^2)^0.5;
-        dist_1pp = ((dP(i-1,1) - dP(i,1))^2 + (dP(i-1,2) - dp(i,2))^2)^0.5;
+        dist_pp1 = ((dP(i,1) - dP(1,1))^2 + (dP(i,2) - dP(1,2))^2)^0.5;
+        dist_1pp = ((dP(i-1,1) - dP(i,1))^2 + (dP(i-1,2) - dP(i,2))^2)^0.5;
       elseif (i == 1)
       	dist_x1p = ((dP(m,1) - x)^2 + (dP(m,2) - y)^2)^0.5;
       	dist_xp1 = ((dP(i+1,1) - x)^2 + (dP(i+1,2) - y)^2)^0.5;
-        dist_pp1 = ((dP(i,1) - dP(i+1,1))^2 + (dP(i,2) - dp(i+1,2))^2)^0.5;
-        dist_1pp = ((dP(m,1) - dP(i,1))^2 + (dP(m,2) - dp(i,2))^2)^0.5;
+        dist_pp1 = ((dP(i,1) - dP(i+1,1))^2 + (dP(i,2) - dP(i+1,2))^2)^0.5;
+        dist_1pp = ((dP(m,1) - dP(i,1))^2 + (dP(m,2) - dP(i,2))^2)^0.5;
       else
       	dist_x1p = ((dP(i-1,1) - x)^2 + (dP(i-1,2) - y)^2)^0.5;
       	dist_xp1 = ((dP(i+1,1) - x)^2 + (dP(i+1,2) - y)^2)^0.5;
-        dist_pp1 = ((dP(i,1) - dP(i+1,1))^2 + (dP(i,2) - dp(i+1,2))^2)^0.5;
-        dist_1pp = ((dP(i-1,1) - dP(i,1))^2 + (dP(i-1,2) - dp(i,2))^2)^0.5;
+        dist_pp1 = ((dP(i,1) - dP(i+1,1))^2 + (dP(i,2) - dP(i+1,2))^2)^0.5;
+        dist_1pp = ((dP(i-1,1) - dP(i,1))^2 + (dP(i-1,2) - dP(i,2))^2)^0.5;
       end
       
       
