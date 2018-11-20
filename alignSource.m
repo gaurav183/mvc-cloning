@@ -26,10 +26,6 @@ ind = y + (x-1)*size(im_t, 1);
 mask2 = false(size(im_t, 1), size(im_t, 2));
 mask2(ind) = true;
 
-max(yind2(:))
-min(yind2(:))
-max(xind2(:))
-min(xind2(:))
 im_s2(yind2, xind2, :) = im_s(yind, xind, :);
 im_t(repmat(mask2, [1 1 3])) = im_s2(repmat(mask2, [1 1 3]));
 

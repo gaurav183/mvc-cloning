@@ -16,13 +16,17 @@ im_src(repmat(mask_ns, [1 1 3])) = 0;
 im_bgr(repmat(mask_ns, [1 1 3])) = 0;
 im_src(repmat(mask_s, [1 1 3])) = im_s(repmat(mask_s, [1 1 3]));
 
-figure;
-imagesc(im_src);
-axis ij;
-figure;
-imagesc(im_bgr);
-axis ij;
+% figure;
+% imagesc(im_src);
+% axis ij;
+% figure;
+% imagesc(im_bgr);
+% axis ij;
 
 [merge_img] = mvc_clone(im_src,im_bgr,dP,mask_s);
 merge_img(repmat(mask_ns, [1 1 3])) = im_background(repmat(mask_ns, [1 1 3]));
+
+figure;
+imagesc(merge_img);
+axis ij;
 % figure(3), hold off, imshow(im_blend)
