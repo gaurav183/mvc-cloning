@@ -48,15 +48,13 @@ function [merge_img] = mvc_clone(src_img,target_img,dP,mask)
             pi = intDP(i,:);
 %             pi
 %             size(pi)
-%             target_img(pi(1), pi(2),d)
-%             src_img(pi(1), pi(2),d)
+            
             diffs(:,i,d) = target_img(pi(1), pi(2),d) - src_img(pi(1), pi(2),d);
         end
     end
     
-%     diffs
-%     merge_img = zeros(h_trg, w_trg,3);
-    merge_img = target_img;
+    diffs
+    merge_img = zeros(h_trg, w_trg,3);
 %     for d=1:3
 %         for i=1:h_trg
 %             for j=1:w_trg
