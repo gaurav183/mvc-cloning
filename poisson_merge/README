@@ -1,0 +1,9 @@
+All functions can be run in the starter.m file. Set the following to true if you want to run the specific part. 
+DO_TOY
+DO_BLEND
+DO_MIXED
+DO_COLOR2GRAY
+DO_FLASH
+Also set 
+im_background and im_object to the images you want to merge. You would also have to select the specific base 
+pixel for the flash and no flash merging. (y=1,x=1) for museum, and (y=1400,x=1000)for my own flash merge. 
