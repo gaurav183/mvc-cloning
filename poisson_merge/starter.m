@@ -20,17 +20,20 @@ if DO_BLEND
     %im_object = imresize(im2double(imread('../data/black_manta.png')), 0.5, 'bilinear');
     %im_background = imresize(im2double(imread('../data/sky.jpg')), 0.5, 'bilinear');
     %im_object = imresize(im2double(imread('../data/king.jpg')), 0.5, 'bilinear');
-    im_background = imresize(im2double(imread('../data/beach.png')), 1, 'bilinear');
-    im_object = imresize(im2double(imread('../data/bear2.png')), 0.7, 'bilinear');
+    im_background = imresize(im2double(imread('../data/beach2.png')), 2, 'bilinear');
+    im_object = imresize(im2double(imread('../data/bear2.png')), 0.5, 'bilinear');
     
     % get source region mask from the user
-%     objmask = getMask(im_object);
+    objmask = getMask(im_object);
 
 
     % align im_s and mask_s with im_background
     [im_s, mask_s] = alignSource(im_object, objmask, im_background);
     % blend
+    timerVal = tic;
     im_blend = poissonBlend(im_s, mask_s, im_background);
+    timerVal2 = toc(timerVal);
+    timerVal2
     figure(3), hold off, imshow(mask_s)
     figure;
     imagesc(im_blend);
